@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProjeEntityModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TblKategori">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AD" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TblUrun" Relationship="Self.FK_TblUrun_TblKategori" FromRole="TblKategori" ToRole="TblUrun" />
+  </EntityType>
+  <EntityType Name="TblMusteri">
+    <Key>
+      <PropertyRef Name="MUSTERIID" />
+    </Key>
+    <Property Name="MUSTERIID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MUSTERIAD" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MUSTERISOYAD" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SEHIR" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TblSatıs" Relationship="Self.FK_TblSatıs_TblMusteri" FromRole="TblMusteri" ToRole="TblSatıs" />
+  </EntityType>
+  <EntityType Name="TblSatıs">
+    <Key>
+      <PropertyRef Name="SATISID" />
+    </Key>
+    <Property Name="SATISID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="URUN" Type="Int32" />
+    <Property Name="MUSTERI" Type="Int32" />
+    <Property Name="FIYAT" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="TARIH" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="TblMusteri" Relationship="Self.FK_TblSatıs_TblMusteri" FromRole="TblSatıs" ToRole="TblMusteri" />
+    <NavigationProperty Name="TblUrun" Relationship="Self.FK_TblSatıs_TblUrun" FromRole="TblSatıs" ToRole="TblUrun" />
+  </EntityType>
+  <EntityType Name="TblUrun">
+    <Key>
+      <PropertyRef Name="URUNID" />
+    </Key>
+    <Property Name="URUNID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="URUNAD" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MARKA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="STOK" Type="Int16" />
+    <Property Name="FİYAT" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="DURUM" Type="Boolean" />
+    <Property Name="KATEGORİ" Type="Int32" />
+    <NavigationProperty Name="TblKategori" Relationship="Self.FK_TblUrun_TblKategori" FromRole="TblUrun" ToRole="TblKategori" />
+    <NavigationProperty Name="TblSatıs" Relationship="Self.FK_TblSatıs_TblUrun" FromRole="TblUrun" ToRole="TblSatıs" />
+  </EntityType>
+  <Association Name="FK_TblUrun_TblKategori">
+    <End Role="TblKategori" Type="Self.TblKategori" Multiplicity="0..1" />
+    <End Role="TblUrun" Type="Self.TblUrun" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblKategori">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TblUrun">
+        <PropertyRef Name="KATEGORİ" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblSatıs_TblMusteri">
+    <End Role="TblMusteri" Type="Self.TblMusteri" Multiplicity="0..1" />
+    <End Role="TblSatıs" Type="Self.TblSatıs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblMusteri">
+        <PropertyRef Name="MUSTERIID" />
+      </Principal>
+      <Dependent Role="TblSatıs">
+        <PropertyRef Name="MUSTERI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblSatıs_TblUrun">
+    <End Role="TblUrun" Type="Self.TblUrun" Multiplicity="0..1" />
+    <End Role="TblSatıs" Type="Self.TblSatıs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblUrun">
+        <PropertyRef Name="URUNID" />
+      </Principal>
+      <Dependent Role="TblSatıs">
+        <PropertyRef Name="URUN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ProjeEntityEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TblKategori" EntityType="Self.TblKategori" />
+    <EntitySet Name="TblMusteri" EntityType="Self.TblMusteri" />
+    <EntitySet Name="TblSatıs" EntityType="Self.TblSatıs" />
+    <EntitySet Name="TblUrun" EntityType="Self.TblUrun" />
+    <AssociationSet Name="FK_TblUrun_TblKategori" Association="Self.FK_TblUrun_TblKategori">
+      <End Role="TblKategori" EntitySet="TblKategori" />
+      <End Role="TblUrun" EntitySet="TblUrun" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblSatıs_TblMusteri" Association="Self.FK_TblSatıs_TblMusteri">
+      <End Role="TblMusteri" EntitySet="TblMusteri" />
+      <End Role="TblSatıs" EntitySet="TblSatıs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblSatıs_TblUrun" Association="Self.FK_TblSatıs_TblUrun">
+      <End Role="TblUrun" EntitySet="TblUrun" />
+      <End Role="TblSatıs" EntitySet="TblSatıs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

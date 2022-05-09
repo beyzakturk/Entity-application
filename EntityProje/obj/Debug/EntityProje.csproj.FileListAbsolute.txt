@@ -1,0 +1,17 @@
+C:\Users\Beyza\Desktop\PROJELERİM\c#\Entity\EntityProje\EntityProje\bin\Debug\EntityProje.exe.config
+C:\Users\Beyza\Desktop\PROJELERİM\c#\Entity\EntityProje\EntityProje\bin\Debug\EntityProje.exe
+C:\Users\Beyza\Desktop\PROJELERİM\c#\Entity\EntityProje\EntityProje\bin\Debug\EntityProje.pdb
+C:\Users\Beyza\Desktop\PROJELERİM\c#\Entity\EntityProje\EntityProje\bin\Debug\EntityFramework.dll
+C:\Users\Beyza\Desktop\PROJELERİM\c#\Entity\EntityProje\EntityProje\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Beyza\Desktop\PROJELERİM\c#\Entity\EntityProje\EntityProje\bin\Debug\EntityFramework.xml
+C:\Users\Beyza\Desktop\PROJELERİM\c#\Entity\EntityProje\EntityProje\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Beyza\Desktop\PROJELERİM\c#\Entity\EntityProje\EntityProje\obj\Debug\EntityProje.csproj.AssemblyReference.cache
+C:\Users\Beyza\Desktop\PROJELERİM\c#\Entity\EntityProje\EntityProje\obj\Debug\EntityProje.Form1.resources
+C:\Users\Beyza\Desktop\PROJELERİM\c#\Entity\EntityProje\EntityProje\obj\Debug\EntityProje.Properties.Resources.resources
+C:\Users\Beyza\Desktop\PROJELERİM\c#\Entity\EntityProje\EntityProje\obj\Debug\EntityProje.csproj.GenerateResource.cache
+C:\Users\Beyza\Desktop\PROJELERİM\c#\Entity\EntityProje\EntityProje\obj\Debug\EntityProje.csproj.CoreCompileInputs.cache
+C:\Users\Beyza\Desktop\PROJELERİM\c#\Entity\EntityProje\EntityProje\obj\Debug\EntityProje.csproj.CopyComplete
+C:\Users\Beyza\Desktop\PROJELERİM\c#\Entity\EntityProje\EntityProje\obj\Debug\EntityProje.exe
+C:\Users\Beyza\Desktop\PROJELERİM\c#\Entity\EntityProje\EntityProje\obj\Debug\EntityProje.pdb
+C:\Users\Beyza\Desktop\PROJELERİM\c#\Entity\EntityProje\EntityProje\obj\Debug\EntityProje.AnaForm.resources
+C:\Users\Beyza\Desktop\PROJELERİM\c#\Entity\EntityProje\EntityProje\obj\Debug\EntityProje.UrunFormu.resources
